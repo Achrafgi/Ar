@@ -178,6 +178,7 @@ return [
         // Develop tools.
         Barryvdh\Debugbar\ServiceProvider::class,
         Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
+        PrettyRoutes\ServiceProvider::class,
     ],
 
     /*
