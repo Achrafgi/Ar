@@ -179,6 +179,7 @@ return [
         Collective\Html\HtmlServiceProvider::class,
         Prettus\Repository\Providers\RepositoryServiceProvider::class,
         Robbo\Presenter\PresenterServiceProvider::class,
+        \App\Providers\RepositoryServiceProvider::class,
 
         // Develop tools.
         Barryvdh\Debugbar\ServiceProvider::class,

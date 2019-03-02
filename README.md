@@ -1,7 +1,8 @@
 # Laravel Book Store
 
 
-[Database Structure](https://github.com/mkondratek/Bookstore-Database-Design)
++ [Database Structure](https://github.com/mkondratek/Bookstore-Database-Design)
++ [Sttellar - Free Bootstrap 4 Admin Template](https://github.com/BootstrapDash/Stellar)
 
 
 I suggest to look at the diagram. A picture is worth a thousand words.
