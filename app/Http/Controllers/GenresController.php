@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Contracts\Pagination\StatisticsPaginatorInterface;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -38,7 +39,7 @@ class GenresController extends Controller
     public function __construct(GenreRepository $repository, GenreValidator $validator)
     {
         $this->repository = $repository;
-        $this->validator  = $validator;
+        $this->validator = $validator;
     }
 
     /**
@@ -48,17 +49,24 @@ class GenresController extends Controller
      */
     public function index()
     {
-        $this->repository->pushCriteria(app('Prettus\Repository\Criteria\RequestCriteria'));
-        $genres = $this->repository->all();
+        $this->repository->pushCriteria(app(\Prettus\Repository\Criteria\RequestCriteria::class));
+        $genres = $this->repository->paginate();
 
         if (request()->wantsJson()) {
-
             return response()->json([
                 'data' => $genres,
             ]);
         }
 
-        return view('genres.index', compact('genres'));
+        $paginator = resolve(StatisticsPaginatorInterface::class);
+        $paginator->setCollection($genres);
+
+        return view('genres.index', compact('genres', 'paginator'));
+    }
+
+    public function create()
+    {
+        return view('genres.create');
     }
 
     /**
@@ -80,7 +88,7 @@ class GenresController extends Controller
 
             $response = [
                 'message' => 'Genre created.',
-                'data'    => $genre->toArray(),
+                'data' => $genre->toArray(),
             ];
 
             if ($request->wantsJson()) {
@@ -92,7 +100,7 @@ class GenresController extends Controller
         } catch (ValidatorException $e) {
             if ($request->wantsJson()) {
                 return response()->json([
-                    'error'   => true,
+                    'error' => true,
                     'message' => $e->getMessageBag()
                 ]);
             }
@@ -140,7 +148,7 @@ class GenresController extends Controller
      * Update the specified resource in storage.
      *
      * @param  GenreUpdateRequest $request
-     * @param  string            $id
+     * @param  string $id
      *
      * @return Response
      *
@@ -156,7 +164,7 @@ class GenresController extends Controller
 
             $response = [
                 'message' => 'Genre updated.',
-                'data'    => $genre->toArray(),
+                'data' => $genre->toArray(),
             ];
 
             if ($request->wantsJson()) {
@@ -170,7 +178,7 @@ class GenresController extends Controller
             if ($request->wantsJson()) {
 
                 return response()->json([
-                    'error'   => true,
+                    'error' => true,
                     'message' => $e->getMessageBag()
                 ]);
             }

@@ -21,5 +21,4 @@ class Genre extends Model implements Transformable
      * @var array
      */
     protected $fillable = [];
-
 }

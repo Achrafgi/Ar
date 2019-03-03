@@ -180,6 +180,7 @@ return [
         Prettus\Repository\Providers\RepositoryServiceProvider::class,
         Robbo\Presenter\PresenterServiceProvider::class,
         \App\Providers\RepositoryServiceProvider::class,
+        \App\Providers\DataServiceProvider::class,
 
         // Develop tools.
         Barryvdh\Debugbar\ServiceProvider::class,
