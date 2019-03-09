@@ -15,10 +15,15 @@ class Genre extends Model implements Transformable
 {
     use TransformableTrait;
 
+    public $timestamps = false;
+
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
-    protected $fillable = [];
+    protected $fillable = [
+        'id',
+        'name'
+    ];
 }

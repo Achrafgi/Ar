@@ -50,7 +50,7 @@ class GenresController extends Controller
     public function index()
     {
         $this->repository->pushCriteria(app(\Prettus\Repository\Criteria\RequestCriteria::class));
-        $genres = $this->repository->paginate();
+        $genres = $this->repository->orderBy('id')->paginate();
 
         if (request()->wantsJson()) {
             return response()->json([
@@ -172,7 +172,7 @@ class GenresController extends Controller
                 return response()->json($response);
             }
 
-            return redirect()->back()->with('message', $response['message']);
+            return redirect(route('genres.index'))->with('message', $response['message']);
         } catch (ValidatorException $e) {
 
             if ($request->wantsJson()) {

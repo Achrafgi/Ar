@@ -13,13 +13,16 @@
             <div class="card">
                 <div class="card-body">
                     <h2 class="card-title">{{ __('Genres') }}</h2>
-                    <div class="table-responsive">
-                        @if ($genres)
+
+                    @if ($genres)
+
+                        <div class="table-responsive">
+
                             <table class="table table-striped">
                                 <thead>
                                 <tr>
                                     <th>ID</th>
-                                    <th>Name</th>
+                                    <th colspan="2">Name</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -32,20 +35,32 @@
                                     <tr>
                                         <td>{{ $genre->id }}</td>
                                         <td>{{ $genre->name }}</td>
+                                        <td width="20%" class="text-right">
+                                            <a href="{{ route('genres.edit', $genre) }}" class="btn btn-xs btn-primary text-white mr-2" title="{{ __('Edit') }}">
+                                                <span class="fa fa-pencil"></span>
+                                            </a>
+                                            <a href="{{ route('genres.destroy', $genre) }}" class="btn btn-xs btn-danger text-white" title="{{ __('Delete') }}">
+                                                <span class="fa fa-trash"></span>
+                                            </a>
+                                        </td>
                                     </tr>
                                 @endforeach
                                 </tbody>
                             </table>
-                        @endif
-                    </div>
 
-                    <div class="d-flex align-items-center justify-content-between flex-wrap">
-                        <p class="mb-0">Showing {{ $paginator->getFromNumber() + 1 }} to {{ $paginator->getToNumber() }}
-                            of {{$genres->total()}} entries</p>
-                        <nav>
-                            {{ $genres->links() }}
-                        </nav>
-                    </div>
+                        </div>
+
+                        <div class="d-flex align-items-center justify-content-between flex-wrap">
+                            <p class="mb-0">Showing {{ $paginator->getFromNumber() + 1 }}
+                                to {{ $paginator->getToNumber() }}
+                                of {{$genres->total()}} entries</p>
+                            <nav>
+                                {{ $genres->links() }}
+                            </nav>
+                        </div>
+                    @else
+                        <div class="alert alert-dark">{{ __('Empty..') }}</div>
+                    @endif
                 </div>
             </div>
         </div>

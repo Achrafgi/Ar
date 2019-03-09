@@ -5,13 +5,15 @@ namespace PHPSTORM_META {
 
    /**
     * PhpStorm Meta file, to provide autocomplete information for PhpStorm
-    * Generated on 2019-02-24 04:47:53.
+    * Generated on 2019-03-09 04:10:47.
     *
     * @author Barry vd. Heuvel <barryvdh@gmail.com>
     * @see https://github.com/barryvdh/laravel-ide-helper
     */
     override(new \Illuminate\Contracts\Container\Container, map([
         '' => '@',
+        'App\Contracts\Pagination\StatisticsPaginatorInterface' => \App\Services\Pagination\StatisticsPaginatorService::class,
+        'App\Repositories\GenreRepository' => \App\Repositories\GenreRepositoryEloquent::class,
         'Barryvdh\Debugbar\LaravelDebugbar' => \Barryvdh\Debugbar\LaravelDebugbar::class,
         'Illuminate\Broadcasting\BroadcastManager' => \Illuminate\Broadcasting\BroadcastManager::class,
         'Illuminate\Bus\Dispatcher' => \Illuminate\Bus\Dispatcher::class,
@@ -30,6 +32,8 @@ namespace PHPSTORM_META {
         'Illuminate\Notifications\ChannelManager' => \Illuminate\Notifications\ChannelManager::class,
         'Illuminate\Routing\Contracts\ControllerDispatcher' => \Illuminate\Routing\ControllerDispatcher::class,
         'Illuminate\Session\Middleware\StartSession' => \Illuminate\Session\Middleware\StartSession::class,
+        'League\OAuth2\Server\AuthorizationServer' => \League\OAuth2\Server\AuthorizationServer::class,
+        'League\OAuth2\Server\ResourceServer' => \League\OAuth2\Server\ResourceServer::class,
         'NunoMaduro\Collision\Contracts\Adapters\Phpunit\Listener' => \NunoMaduro\Collision\Adapters\Phpunit\Listener::class,
         'NunoMaduro\Collision\Contracts\Provider' => \NunoMaduro\Collision\Provider::class,
         'Psr\Http\Message\ResponseInterface' => \Zend\Diactoros\Response::class,
@@ -117,7 +121,7 @@ namespace PHPSTORM_META {
         'composer' => \Illuminate\Support\Composer::class,
         'cookie' => \Illuminate\Cookie\CookieJar::class,
         'db' => \Illuminate\Database\DatabaseManager::class,
-        'db.connection' => \Illuminate\Database\MySqlConnection::class,
+        'db.connection' => \Illuminate\Database\PostgresConnection::class,
         'db.factory' => \Illuminate\Database\Connectors\ConnectionFactory::class,
         'encrypter' => \Illuminate\Encryption\Encrypter::class,
         'events' => \Illuminate\Events\Dispatcher::class,
@@ -158,6 +162,8 @@ namespace PHPSTORM_META {
     ]));
     override(\Illuminate\Contracts\Container\Container::make(0), map([
         '' => '@',
+        'App\Contracts\Pagination\StatisticsPaginatorInterface' => \App\Services\Pagination\StatisticsPaginatorService::class,
+        'App\Repositories\GenreRepository' => \App\Repositories\GenreRepositoryEloquent::class,
         'Barryvdh\Debugbar\LaravelDebugbar' => \Barryvdh\Debugbar\LaravelDebugbar::class,
         'Illuminate\Broadcasting\BroadcastManager' => \Illuminate\Broadcasting\BroadcastManager::class,
         'Illuminate\Bus\Dispatcher' => \Illuminate\Bus\Dispatcher::class,
@@ -176,6 +182,8 @@ namespace PHPSTORM_META {
         'Illuminate\Notifications\ChannelManager' => \Illuminate\Notifications\ChannelManager::class,
         'Illuminate\Routing\Contracts\ControllerDispatcher' => \Illuminate\Routing\ControllerDispatcher::class,
         'Illuminate\Session\Middleware\StartSession' => \Illuminate\Session\Middleware\StartSession::class,
+        'League\OAuth2\Server\AuthorizationServer' => \League\OAuth2\Server\AuthorizationServer::class,
+        'League\OAuth2\Server\ResourceServer' => \League\OAuth2\Server\ResourceServer::class,
         'NunoMaduro\Collision\Contracts\Adapters\Phpunit\Listener' => \NunoMaduro\Collision\Adapters\Phpunit\Listener::class,
         'NunoMaduro\Collision\Contracts\Provider' => \NunoMaduro\Collision\Provider::class,
         'Psr\Http\Message\ResponseInterface' => \Zend\Diactoros\Response::class,
@@ -263,7 +271,7 @@ namespace PHPSTORM_META {
         'composer' => \Illuminate\Support\Composer::class,
         'cookie' => \Illuminate\Cookie\CookieJar::class,
         'db' => \Illuminate\Database\DatabaseManager::class,
-        'db.connection' => \Illuminate\Database\MySqlConnection::class,
+        'db.connection' => \Illuminate\Database\PostgresConnection::class,
         'db.factory' => \Illuminate\Database\Connectors\ConnectionFactory::class,
         'encrypter' => \Illuminate\Encryption\Encrypter::class,
         'events' => \Illuminate\Events\Dispatcher::class,
@@ -304,6 +312,8 @@ namespace PHPSTORM_META {
     ]));
     override(\Illuminate\Contracts\Container\Container::makeWith(0), map([
         '' => '@',
+        'App\Contracts\Pagination\StatisticsPaginatorInterface' => \App\Services\Pagination\StatisticsPaginatorService::class,
+        'App\Repositories\GenreRepository' => \App\Repositories\GenreRepositoryEloquent::class,
         'Barryvdh\Debugbar\LaravelDebugbar' => \Barryvdh\Debugbar\LaravelDebugbar::class,
         'Illuminate\Broadcasting\BroadcastManager' => \Illuminate\Broadcasting\BroadcastManager::class,
         'Illuminate\Bus\Dispatcher' => \Illuminate\Bus\Dispatcher::class,
@@ -322,6 +332,8 @@ namespace PHPSTORM_META {
         'Illuminate\Notifications\ChannelManager' => \Illuminate\Notifications\ChannelManager::class,
         'Illuminate\Routing\Contracts\ControllerDispatcher' => \Illuminate\Routing\ControllerDispatcher::class,
         'Illuminate\Session\Middleware\StartSession' => \Illuminate\Session\Middleware\StartSession::class,
+        'League\OAuth2\Server\AuthorizationServer' => \League\OAuth2\Server\AuthorizationServer::class,
+        'League\OAuth2\Server\ResourceServer' => \League\OAuth2\Server\ResourceServer::class,
         'NunoMaduro\Collision\Contracts\Adapters\Phpunit\Listener' => \NunoMaduro\Collision\Adapters\Phpunit\Listener::class,
         'NunoMaduro\Collision\Contracts\Provider' => \NunoMaduro\Collision\Provider::class,
         'Psr\Http\Message\ResponseInterface' => \Zend\Diactoros\Response::class,
@@ -409,7 +421,7 @@ namespace PHPSTORM_META {
         'composer' => \Illuminate\Support\Composer::class,
         'cookie' => \Illuminate\Cookie\CookieJar::class,
         'db' => \Illuminate\Database\DatabaseManager::class,
-        'db.connection' => \Illuminate\Database\MySqlConnection::class,
+        'db.connection' => \Illuminate\Database\PostgresConnection::class,
         'db.factory' => \Illuminate\Database\Connectors\ConnectionFactory::class,
         'encrypter' => \Illuminate\Encryption\Encrypter::class,
         'events' => \Illuminate\Events\Dispatcher::class,
@@ -450,6 +462,8 @@ namespace PHPSTORM_META {
     ]));
     override(\App::make(0), map([
         '' => '@',
+        'App\Contracts\Pagination\StatisticsPaginatorInterface' => \App\Services\Pagination\StatisticsPaginatorService::class,
+        'App\Repositories\GenreRepository' => \App\Repositories\GenreRepositoryEloquent::class,
         'Barryvdh\Debugbar\LaravelDebugbar' => \Barryvdh\Debugbar\LaravelDebugbar::class,
         'Illuminate\Broadcasting\BroadcastManager' => \Illuminate\Broadcasting\BroadcastManager::class,
         'Illuminate\Bus\Dispatcher' => \Illuminate\Bus\Dispatcher::class,
@@ -468,6 +482,8 @@ namespace PHPSTORM_META {
         'Illuminate\Notifications\ChannelManager' => \Illuminate\Notifications\ChannelManager::class,
         'Illuminate\Routing\Contracts\ControllerDispatcher' => \Illuminate\Routing\ControllerDispatcher::class,
         'Illuminate\Session\Middleware\StartSession' => \Illuminate\Session\Middleware\StartSession::class,
+        'League\OAuth2\Server\AuthorizationServer' => \League\OAuth2\Server\AuthorizationServer::class,
+        'League\OAuth2\Server\ResourceServer' => \League\OAuth2\Server\ResourceServer::class,
         'NunoMaduro\Collision\Contracts\Adapters\Phpunit\Listener' => \NunoMaduro\Collision\Adapters\Phpunit\Listener::class,
         'NunoMaduro\Collision\Contracts\Provider' => \NunoMaduro\Collision\Provider::class,
         'Psr\Http\Message\ResponseInterface' => \Zend\Diactoros\Response::class,
@@ -555,7 +571,7 @@ namespace PHPSTORM_META {
         'composer' => \Illuminate\Support\Composer::class,
         'cookie' => \Illuminate\Cookie\CookieJar::class,
         'db' => \Illuminate\Database\DatabaseManager::class,
-        'db.connection' => \Illuminate\Database\MySqlConnection::class,
+        'db.connection' => \Illuminate\Database\PostgresConnection::class,
         'db.factory' => \Illuminate\Database\Connectors\ConnectionFactory::class,
         'encrypter' => \Illuminate\Encryption\Encrypter::class,
         'events' => \Illuminate\Events\Dispatcher::class,
@@ -596,6 +612,8 @@ namespace PHPSTORM_META {
     ]));
     override(\App::makeWith(0), map([
         '' => '@',
+        'App\Contracts\Pagination\StatisticsPaginatorInterface' => \App\Services\Pagination\StatisticsPaginatorService::class,
+        'App\Repositories\GenreRepository' => \App\Repositories\GenreRepositoryEloquent::class,
         'Barryvdh\Debugbar\LaravelDebugbar' => \Barryvdh\Debugbar\LaravelDebugbar::class,
         'Illuminate\Broadcasting\BroadcastManager' => \Illuminate\Broadcasting\BroadcastManager::class,
         'Illuminate\Bus\Dispatcher' => \Illuminate\Bus\Dispatcher::class,
@@ -614,6 +632,8 @@ namespace PHPSTORM_META {
         'Illuminate\Notifications\ChannelManager' => \Illuminate\Notifications\ChannelManager::class,
         'Illuminate\Routing\Contracts\ControllerDispatcher' => \Illuminate\Routing\ControllerDispatcher::class,
         'Illuminate\Session\Middleware\StartSession' => \Illuminate\Session\Middleware\StartSession::class,
+        'League\OAuth2\Server\AuthorizationServer' => \League\OAuth2\Server\AuthorizationServer::class,
+        'League\OAuth2\Server\ResourceServer' => \League\OAuth2\Server\ResourceServer::class,
         'NunoMaduro\Collision\Contracts\Adapters\Phpunit\Listener' => \NunoMaduro\Collision\Adapters\Phpunit\Listener::class,
         'NunoMaduro\Collision\Contracts\Provider' => \NunoMaduro\Collision\Provider::class,
         'Psr\Http\Message\ResponseInterface' => \Zend\Diactoros\Response::class,
@@ -701,7 +721,7 @@ namespace PHPSTORM_META {
         'composer' => \Illuminate\Support\Composer::class,
         'cookie' => \Illuminate\Cookie\CookieJar::class,
         'db' => \Illuminate\Database\DatabaseManager::class,
-        'db.connection' => \Illuminate\Database\MySqlConnection::class,
+        'db.connection' => \Illuminate\Database\PostgresConnection::class,
         'db.factory' => \Illuminate\Database\Connectors\ConnectionFactory::class,
         'encrypter' => \Illuminate\Encryption\Encrypter::class,
         'events' => \Illuminate\Events\Dispatcher::class,
@@ -742,6 +762,8 @@ namespace PHPSTORM_META {
     ]));
     override(\app(0), map([
         '' => '@',
+        'App\Contracts\Pagination\StatisticsPaginatorInterface' => \App\Services\Pagination\StatisticsPaginatorService::class,
+        'App\Repositories\GenreRepository' => \App\Repositories\GenreRepositoryEloquent::class,
         'Barryvdh\Debugbar\LaravelDebugbar' => \Barryvdh\Debugbar\LaravelDebugbar::class,
         'Illuminate\Broadcasting\BroadcastManager' => \Illuminate\Broadcasting\BroadcastManager::class,
         'Illuminate\Bus\Dispatcher' => \Illuminate\Bus\Dispatcher::class,
@@ -760,6 +782,8 @@ namespace PHPSTORM_META {
         'Illuminate\Notifications\ChannelManager' => \Illuminate\Notifications\ChannelManager::class,
         'Illuminate\Routing\Contracts\ControllerDispatcher' => \Illuminate\Routing\ControllerDispatcher::class,
         'Illuminate\Session\Middleware\StartSession' => \Illuminate\Session\Middleware\StartSession::class,
+        'League\OAuth2\Server\AuthorizationServer' => \League\OAuth2\Server\AuthorizationServer::class,
+        'League\OAuth2\Server\ResourceServer' => \League\OAuth2\Server\ResourceServer::class,
         'NunoMaduro\Collision\Contracts\Adapters\Phpunit\Listener' => \NunoMaduro\Collision\Adapters\Phpunit\Listener::class,
         'NunoMaduro\Collision\Contracts\Provider' => \NunoMaduro\Collision\Provider::class,
         'Psr\Http\Message\ResponseInterface' => \Zend\Diactoros\Response::class,
@@ -847,7 +871,7 @@ namespace PHPSTORM_META {
         'composer' => \Illuminate\Support\Composer::class,
         'cookie' => \Illuminate\Cookie\CookieJar::class,
         'db' => \Illuminate\Database\DatabaseManager::class,
-        'db.connection' => \Illuminate\Database\MySqlConnection::class,
+        'db.connection' => \Illuminate\Database\PostgresConnection::class,
         'db.factory' => \Illuminate\Database\Connectors\ConnectionFactory::class,
         'encrypter' => \Illuminate\Encryption\Encrypter::class,
         'events' => \Illuminate\Events\Dispatcher::class,
@@ -888,6 +912,8 @@ namespace PHPSTORM_META {
     ]));
     override(\resolve(0), map([
         '' => '@',
+        'App\Contracts\Pagination\StatisticsPaginatorInterface' => \App\Services\Pagination\StatisticsPaginatorService::class,
+        'App\Repositories\GenreRepository' => \App\Repositories\GenreRepositoryEloquent::class,
         'Barryvdh\Debugbar\LaravelDebugbar' => \Barryvdh\Debugbar\LaravelDebugbar::class,
         'Illuminate\Broadcasting\BroadcastManager' => \Illuminate\Broadcasting\BroadcastManager::class,
         'Illuminate\Bus\Dispatcher' => \Illuminate\Bus\Dispatcher::class,
@@ -906,6 +932,8 @@ namespace PHPSTORM_META {
         'Illuminate\Notifications\ChannelManager' => \Illuminate\Notifications\ChannelManager::class,
         'Illuminate\Routing\Contracts\ControllerDispatcher' => \Illuminate\Routing\ControllerDispatcher::class,
         'Illuminate\Session\Middleware\StartSession' => \Illuminate\Session\Middleware\StartSession::class,
+        'League\OAuth2\Server\AuthorizationServer' => \League\OAuth2\Server\AuthorizationServer::class,
+        'League\OAuth2\Server\ResourceServer' => \League\OAuth2\Server\ResourceServer::class,
         'NunoMaduro\Collision\Contracts\Adapters\Phpunit\Listener' => \NunoMaduro\Collision\Adapters\Phpunit\Listener::class,
         'NunoMaduro\Collision\Contracts\Provider' => \NunoMaduro\Collision\Provider::class,
         'Psr\Http\Message\ResponseInterface' => \Zend\Diactoros\Response::class,
@@ -993,7 +1021,7 @@ namespace PHPSTORM_META {
         'composer' => \Illuminate\Support\Composer::class,
         'cookie' => \Illuminate\Cookie\CookieJar::class,
         'db' => \Illuminate\Database\DatabaseManager::class,
-        'db.connection' => \Illuminate\Database\MySqlConnection::class,
+        'db.connection' => \Illuminate\Database\PostgresConnection::class,
         'db.factory' => \Illuminate\Database\Connectors\ConnectionFactory::class,
         'encrypter' => \Illuminate\Encryption\Encrypter::class,
         'events' => \Illuminate\Events\Dispatcher::class,

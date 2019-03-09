@@ -20,6 +20,7 @@ gulp.task('css', function () {
         './node_modules/mdi/css/materialdesignicons.min.css',
         './node_modules/simple-line-icons/css/simple-line-icons.css',
         './node_modules/flag-icon-css/css/flag-icon.min.css',
+        './node_modules/font-awesome/css/font-awesome.min.css',
         './node_modules/chartist/dist/chartist.min.css',
         './node_modules/jvectormap/jquery-jvectormap.css',
         './css/style.css'
