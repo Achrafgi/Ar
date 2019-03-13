@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Contracts\Pagination\StatisticsPaginatorInterface;
+use App\Entities\Genre;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -50,7 +51,7 @@ class GenresController extends Controller
     public function index()
     {
         $this->repository->pushCriteria(app(\Prettus\Repository\Criteria\RequestCriteria::class));
-        $genres = $this->repository->orderBy('id')->paginate();
+        $genres = $this->repository->orderBy('id', 'desc')->paginate();
 
         if (request()->wantsJson()) {
             return response()->json([
@@ -66,7 +67,9 @@ class GenresController extends Controller
 
     public function create()
     {
-        return view('genres.create');
+        $genre = new Genre();
+
+        return view('genres.create', compact('genre'));
     }
 
     /**
@@ -94,7 +97,7 @@ class GenresController extends Controller
                 return response()->json($response);
             }
 
-            return redirect()->back()->with('message', $response['message']);
+            return redirect(route('genres.index'))->with('message', $response['message']);
         } catch (ValidatorException $e) {
             if ($request->wantsJson()) {
                 return response()->json([
