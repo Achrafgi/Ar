@@ -24,3 +24,16 @@ I suggest to look at the diagram. A picture is worth a thousand words.
 |orders|list of them, points shipper, discount and customer|
 |orders_details|points orders and tells amount of specific book|
 |reviews|0 - 10 ratings and comments|
+
+
+### Featured packages
++ barryvdh/laravel-ide-helper
++ garygreen/pretty-routes
++ laravel/passport
++ laravelcollective/html
++ league/fractal
++ predis/predis
++ prettus/l5-repository
++ prettus/laravel-validation
++ rap2hpoutre/laravel-log-viewer
++ robclancy/presenter

@@ -18,7 +18,19 @@ class GenreValidator extends LaravelValidator
      * @var array
      */
     protected $rules = [
-        ValidatorInterface::RULE_CREATE => [],
-        ValidatorInterface::RULE_UPDATE => [],
+        ValidatorInterface::RULE_CREATE => [
+            'name' => 'required|string|min:3|max:255'
+        ],
+        ValidatorInterface::RULE_UPDATE => [
+            'name' => 'required|string|min:3|max:255'
+        ],
+    ];
+
+    protected $messages = [
+        'required' => 'The :attribute field is required.',
+    ];
+
+    protected $attributes = [
+        'name' => "genre's name"
     ];
 }

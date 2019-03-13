@@ -76,7 +76,6 @@ class GenresController extends Controller
      *
      * @return \Illuminate\Http\Response
      *
-     * @throws \Prettus\Validator\Exceptions\ValidatorException
      */
     public function store(GenreCreateRequest $request)
     {
@@ -87,12 +86,11 @@ class GenresController extends Controller
             $genre = $this->repository->create($request->all());
 
             $response = [
-                'message' => 'Genre created.',
+                'message' => __('Genre created.'),
                 'data' => $genre->toArray(),
             ];
 
             if ($request->wantsJson()) {
-
                 return response()->json($response);
             }
 
