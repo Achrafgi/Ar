@@ -153,7 +153,6 @@ class GenresController extends Controller
      *
      * @return Response
      *
-     * @throws \Prettus\Validator\Exceptions\ValidatorException
      */
     public function update(GenreUpdateRequest $request, $id)
     {
