@@ -36,12 +36,20 @@
                                         <td>{{ $genre->id }}</td>
                                         <td>{{ $genre->name }}</td>
                                         <td width="20%" class="text-right">
-                                            <a href="{{ route('genres.edit', $genre) }}" class="btn btn-xs btn-primary text-white mr-2" title="{{ __('Edit') }}">
+                                            <a href="{{ route('genres.edit', $genre) }}"
+                                               class="btn btn-xs btn-primary text-white mr-2" title="{{ __('Edit') }}">
                                                 <span class="fa fa-pencil"></span>
                                             </a>
-                                            <a href="{{ route('genres.destroy', $genre) }}" class="btn btn-xs btn-danger text-white" title="{{ __('Delete') }}">
-                                                <span class="fa fa-trash"></span>
-                                            </a>
+                                            @php
+                                                $formOptions = [
+                                                    'url' => route('genres.destroy', ['genre' => $genre]),
+                                                    'method' => 'delete',
+                                                    'class' => 'float-right'
+                                                ];
+                                            @endphp
+                                            {!! Form::open($formOptions) !!}
+                                            {!! Form::button('<span class="fa fa-trash"></span>', DataGrid::getBtnDeleteOptions()) !!}
+                                            {!! Form::close() !!}
                                         </td>
                                     </tr>
                                 @endforeach

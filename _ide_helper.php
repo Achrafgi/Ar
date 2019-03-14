@@ -3,7 +3,7 @@
 
 /**
  * A helper file for Laravel 5, to provide autocomplete information to your IDE
- * Generated for Laravel 5.7.28 on 2019-03-09 04:10:46.
+ * Generated for Laravel 5.7.28 on 2019-03-14 15:28:50.
  *
  * This file should not be included in your code, only analyzed by your IDE!
  *
@@ -15749,6 +15749,30 @@ namespace Collective\Html {
  
 }
 
+namespace App\Facades { 
+
+    /**
+     * 
+     *
+     */ 
+    class DataGridFacade {
+        
+        /**
+         * 
+         *
+         * @return array 
+         * @static 
+         */ 
+        public static function getBtnDeleteOptions()
+        {
+                        /** @var \App\Helpers\DataGrid $instance */
+                        return $instance->getBtnDeleteOptions();
+        }
+         
+    }
+ 
+}
+
 namespace Barryvdh\Debugbar { 
 
     /**
@@ -18968,6 +18992,8 @@ namespace  {
     class Form extends \Collective\Html\FormFacade {}
 
     class Html extends \Collective\Html\HtmlFacade {}
+
+    class DataGrid extends \App\Facades\DataGridFacade {}
 
     class Debugbar extends \Barryvdh\Debugbar\Facade {}
  

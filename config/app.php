@@ -181,6 +181,7 @@ return [
         Robbo\Presenter\PresenterServiceProvider::class,
         \App\Providers\RepositoryServiceProvider::class,
         \App\Providers\DataServiceProvider::class,
+        \App\Providers\HelperServiceProvider::class,
 
         // Develop tools.
         Barryvdh\Debugbar\ServiceProvider::class,
@@ -238,6 +239,7 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         'Form' => Collective\Html\FormFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,
+        'DataGrid' => \App\Facades\DataGridFacade::class,
     ],
 
 ];
