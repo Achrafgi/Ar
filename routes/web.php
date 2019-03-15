@@ -21,5 +21,5 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-
 Route::resource('genres', 'GenresController');
+Route::resource('authors', 'AuthorsController');
