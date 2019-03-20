@@ -3,9 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Contracts\Pagination\StatisticsPaginatorInterface;
-use Illuminate\Http\Request;
-
-use App\Http\Requests;
 use Prettus\Validator\Contracts\ValidatorInterface;
 use Prettus\Validator\Exceptions\ValidatorException;
 use App\Http\Requests\AuthorCreateRequest;
